@@ -1,0 +1,93 @@
+﻿<Window x:Class="WpfRadyo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfRadyo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="650" AllowsTransparency="True" WindowStyle="None" Background="Transparent">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="650">
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30">
+            </RowDefinition>
+            <RowDefinition Height="150">
+            </RowDefinition>
+            <RowDefinition Height="120">
+            </RowDefinition>
+            <RowDefinition Height="50">
+            </RowDefinition>
+            <RowDefinition>
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <!-- En ust -->
+        <Border Grid.Column="0" CornerRadius="10,10,0,0">
+            <Grid >
+                
+                <Border x:Name="Ust" Grid.Row="0" Grid.Column="0" Background="White" MouseDown="Ust_MouseDown" CornerRadius="10,10,0,0">
+                    <DockPanel VerticalAlignment="Center" HorizontalAlignment="Right" Width="60" Height="30">
+                        <Label Content="Radyo Yayın Uygulaması WPF" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#780001" FontWeight="Bold"  Margin="-980,0,0,0"></Label>
+                        <Button Style="{DynamicResource UstButonlar1}" x:Name="btnKucult" Click="btnKucult_Click">
+                            <Image Style="{DynamicResource Img1}"/>
+                        </Button>
+                        <Button Style="{DynamicResource UstButonlar2}" Content="X" x:Name="btnKapat" Click="btnKapat_Click"/>
+                    </DockPanel>
+                </Border>
+            </Grid>
+        </Border>
+        <!-- ilk sıra -->
+        <Border Grid.Row="1" Grid.Column="0" Background="#780001">
+            <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Style="{DynamicResource RadyoBtn}" x:Name="btnAlem" Click="btn_Click">
+                    <Image Source="img/radyo/alem-fm.png"></Image>
+                </Button>
+                <Button Style="{DynamicResource RadyoBtn}" x:Name="btnBest" Click="btn_Click">
+                    <Image Source="img/radyo/bestfm.png"></Image>
+                </Button>
+                <Button Style="{DynamicResource RadyoBtn}" x:Name="btnJoyTurk" Click="btn_Click">
+                    <Image Source="img/radyo/joyturk.png" Margin="5"></Image>
+                </Button>
+                <Button Style="{DynamicResource RadyoBtn}" x:Name="btnJoyAkustik" Click="btn_Click">
+                    <Image Source="img/radyo/joyturkakustik.png" ></Image>
+                </Button>
+                <Button Style="{DynamicResource RadyoBtn}" x:Name="btnKral" Click="btn_Click">
+                    <Image Source="img/radyo/kral_fm.png"></Image>
+                </Button>
+            </DockPanel>
+        </Border>
+        <!-- 2.sıra -->
+        <Border Grid.Row="2" Grid.Column="0" Background="#780001">
+            <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Height="100" Width="120" Style="{DynamicResource RadyoBtn}" x:Name="btnKralPop" Click="btn_Click">
+                    <Image Source="img/radyo/kralpop.png"></Image>
+                </Button>
+                <Button Height="100" Width="120" Style="{DynamicResource RadyoBtn}" x:Name="btnPower" Click="btn_Click">
+                    <Image Source="img/radyo/powerturk.png"></Image>
+                </Button>
+                <Button Height="100" Width="120" Style="{DynamicResource RadyoBtn}" x:Name="btnViva" Click="btn_Click">
+                    <Image Source="img/radyo/radyo_viva_logo.png"></Image>
+                </Button>
+                <Button Height="100" Width="120" Style="{DynamicResource RadyoBtn}" Background="Black" x:Name="btnShow" Click="btn_Click">
+                    <Image Source="img/radyo/show.png"></Image>
+                </Button>
+                <Button Height="100" Width="120" Style="{DynamicResource RadyoBtn}" x:Name="btnSlow" Click="btn_Click">
+                    <Image Source="img/radyo/slowturk.png"></Image>
+                </Button>
+            </DockPanel>
+        </Border>
+        <!-- Durdur buton ve slider -->
+        <Border Height="150" Grid.Column="0" Grid.Row="3" Background="#780001">
+            <DockPanel Height="50" VerticalAlignment="Top">
+                <Button x:Name="btnDurdur" Style="{DynamicResource btnDurdur}" Margin="0,0,0,0" Click="btnDurdur_Click">DURDUR</Button>
+            </DockPanel>
+        </Border>
+        <!-- en alt-->
+        <Border Height="100" Grid.Column="0" Grid.Row="4" Background="#780001" CornerRadius="0,0,10,10">
+            <WindowsFormsHost x:Name="WinFormHost" Width="100" Height="50"  />
+
+        </Border>
+    </Grid>
+</Window>
